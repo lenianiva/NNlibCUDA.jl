@@ -103,4 +103,9 @@ types = [CuArray{Int32}, CuArray{Int64}, CuArray{Float32}, CuArray{Float64}]
             end
         end
     end
+
+    a = cu([1,2,3])
+    i = cu(Int[])
+    y = NNlib.scatter(+, a, i)
+    @test isempty(y)
 end
